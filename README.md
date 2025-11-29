@@ -215,14 +215,43 @@ backend/
 ### 🔧 Pasos Detallados:
 
 #### Paso 2.1: Crear Subdominio en cPanel
-1. En cPanel, busca **"Subdominios"** o **"Subdomains"**
+
+**⚠️ IMPORTANTE:** Hay dos formas de crear el subdominio en cPanel:
+
+**Opción A: Usar "Subdominios" (Recomendado - Más fácil)**
+
+1. En cPanel, busca **"Subdominios"** o **"Subdomains"** (NO "Crear un dominio")
 2. Haz clic en **"Crear Subdominio"** o **"Create Subdomain"**
 3. Completa el formulario:
-   - **Subdominio:** `api`
-   - **Dominio:** `farmeoa.com` (seleccionar del dropdown)
+   - **Subdominio:** `api` (solo escribir "api", sin el punto ni el dominio)
+   - **Dominio:** `farmeoa.com` (seleccionar del dropdown o ya estará seleccionado)
    - **Directorio:** `api` (o `public_html/api`)
 4. Haz clic en **"Crear"** o **"Create"**
 5. Anota la ruta del directorio (ej: `/home/usuario/public_html/api`)
+
+**Opción B: Si solo encuentras "Crear un dominio" (Addon Domain)**
+
+Si en tu cPanel solo ves la opción "Crear un dominio" o "Addon Domain", completa así:
+
+1. En el campo **"Dominio"** (Domain):
+   - Escribe: `api.farmeoa.com` (el dominio completo con 2 etiquetas: "api" y "farmeoa.com")
+   - Esto resuelve el error "debe tener al menos 2 etiquetas"
+
+2. En el campo **"Subdominio"** (Subdomain):
+   - Debería aparecer automáticamente: `api.farmeoa.com`
+   - O puedes dejarlo como está
+
+3. En el campo **"Document Root"** (File System Location):
+   - Debería mostrar: `/api` o `/public_html/api`
+   - O puedes cambiarlo a: `api` o `public_html/api`
+
+4. **NO marques** la casilla "Share document root" (compartir raíz de documentos)
+
+5. Haz clic en **"Enviar"** o **"Submit"**
+
+**Nota:** La diferencia es:
+- **Subdominios**: Solo escribes "api" y el sistema agrega ".farmeoa.com"
+- **Addon Domain**: Debes escribir el dominio completo "api.farmeoa.com"
 
 #### Paso 2.2: Preparar Archivos del Backend
 
